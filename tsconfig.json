@@ -16,6 +16,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/pages/hello.jsx", "src/components/sunglass_preview_modal/index.jsxx"],
   "exclude": ["node_modules"]
 }
