@@ -182,7 +182,6 @@ const CheckoutLayout: FC<Props> = ({ glassType }) => {
         open={open}
         onClose={handleClose}
         className="w-full h-full"
-    
       >
         <Box >
           <ArScene onClose={handleClose} />
