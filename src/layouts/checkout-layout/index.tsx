@@ -189,15 +189,21 @@ const CheckoutLayout: FC<Props> = ({ glassType }) => {
       </Modal>
       :
       <Modal
-        open={open}
-        onClose={handleClose}
-        className="w-1/2 h-3/4 m-auto"
-      >
-        <Box >
-          {/* <ArScene onClose={handleClose} /> */}
-          <iframe src={`https://test.scentinos.com/20240328/`}/>
-        </Box>
-      </Modal>
+      open={open}
+      onClose={handleClose}
+      className="w-1/2 h-3/4 m-auto"
+    >
+      <Box className="w-full h-full flex justify-center items-center">
+        <iframe
+          width="100%"  // Set iframe width to 100% to fill the modal horizontally
+          height="100%" // Set iframe height to 100% to fill the modal vertically
+          src={`https://test.scentinos.com/20240328/`}
+          allow="camera;"
+          style={{ border: "none" }} // Optionally, remove iframe border
+        />
+      </Box>
+    </Modal>
+    
       }
  
     </div>
