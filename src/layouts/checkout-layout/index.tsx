@@ -194,7 +194,8 @@ const CheckoutLayout: FC<Props> = ({ glassType }) => {
         className="w-1/2 h-3/4 m-auto"
       >
         <Box >
-          <ArScene onClose={handleClose} />
+          {/* <ArScene onClose={handleClose} /> */}
+          <iframe src={`https://test.scentinos.com/20240328/`}/>
         </Box>
       </Modal>
       }
