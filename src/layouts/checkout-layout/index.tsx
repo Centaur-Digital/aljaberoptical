@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import Image from "next/image";
 import * as FeatherIcon from "react-feather";
 import SunglassModalViewer from "../../components/sunglass_3dmodal";
@@ -19,16 +19,40 @@ const CheckoutLayout: FC<Props> = ({ glassType }) => {
 
   const GLASS_NAME = glassType === 'EYE_GLASS' ? 'ROUND HAVANA EYEGLASSES' : 'Gunmetal Square Sunglasses'
   const [currentImage, setCurrentImage] = useState( glassType === 'EYE_GLASS' ? "/optical/optical_1.jpg" : "/optical/metal/optical_1.jpg");
-  const [is360ViewActive, setIs360ViewActive] = useState<boolean>(false);
+  const timestamp = new Date().getTime();
+  const IFRAME_LINK = `${glassType === 'EYE_GLASS' ? 'https://test.scentinos.com/20240328/index.html?selected=glasses1' : 'https://test.scentinos.com/20240328/index.html?selected=glasses2'}&timestamp=${timestamp}`;
+   const [is360ViewActive, setIs360ViewActive] = useState<boolean>(false);
   const router =useRouter();
   const [open, setOpen] = useState(false);
-  const handleClose = () => {
-    setOpen(!open);
-  };
 
   const handle360ViewClick = () => {
     setIs360ViewActive(true);
   };
+
+  // Add this code in your React component where you render the iframe
+useEffect(() => {
+  const handleMessage = (event:any) => {
+    if (event.data === 'CloseModal') {
+      console.log(`hello`)
+   handleClose();
+    }
+  };
+
+  // Add event listener to listen for messages from the iframe
+  window.addEventListener('message', handleMessage);
+
+  // Remove event listener on component unmount
+  return () => {
+    window.removeEventListener('message', handleMessage);
+  };
+// eslint-disable-next-line react-hooks/exhaustive-deps
+}, []);
+
+
+const handleClose = () => {
+  setOpen(!open);
+};
+
 
   const images = glassType === 'EYE_GLASS' ? [
     "/optical/optical_1.jpg",
@@ -96,8 +120,8 @@ const CheckoutLayout: FC<Props> = ({ glassType }) => {
         </div>
         {/* Product image gallery and checkout count */}
         <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-12 w-full h-full">
-          <div className="w-full md:w-1/2  h-4/5 relative">
-            <div className="w-full h-full border border-gray-200 relative cursor-pointer">
+          <div className="w-full md:w-1/2  md:h-3/5 h-full  relative">
+            <div className="w-full md:h-full h-[20rem] border border-gray-200 relative cursor-pointer">
               <div
                 className="absolute inset-y-0 left-0 flex items-center z-10 cursor-pointer opacity-0 transition-opacity duration-300 hover:opacity-100"
                 onClick={() => handleChangeImage("prev")}
@@ -183,21 +207,27 @@ const CheckoutLayout: FC<Props> = ({ glassType }) => {
         onClose={handleClose}
         className="w-full h-full"
       >
-        <Box >
-          <ArScene onClose={handleClose} />
+        <Box className='w-full h-full'>
+        <iframe
+          width="100%"  // Set iframe width to 100% to fill the modal horizontally
+          height="100%" // Set iframe height to 100% to fill the modal vertically
+          src={IFRAME_LINK}
+          allow="camera;"
+          style={{ border: "none" }} // Optionally, remove iframe border
+        />
         </Box>
       </Modal>
       :
       <Modal
       open={open}
       onClose={handleClose}
-      className="w-1/2 h-3/4 m-auto"
+      className="w-1/2 h-3/4 m-auto "
     >
       <Box className="w-full h-full flex justify-center items-center">
         <iframe
           width="100%"  // Set iframe width to 100% to fill the modal horizontally
           height="100%" // Set iframe height to 100% to fill the modal vertically
-          src={`https://test.scentinos.com/20240328/`}
+          src={IFRAME_LINK}
           allow="camera;"
           style={{ border: "none" }} // Optionally, remove iframe border
         />

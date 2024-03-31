@@ -1,6 +1,6 @@
 export default function DescriptionLayout() {
     return (
-        <div className="h-64 flex flex-col">
+        <div className="md:h-64 h-78 md:mt-0 mt-36  flex flex-col">
             <div className="text-4xl font-extrabold mb-4 md:mt-0 mt-28 md:p-0 p-2">More Information</div>
             <div className="border border-gray-200"></div>
             <div className="mt-4 grid md:text-2xl text-sm grid-cols-2 md:p-0 p-2 gap-x-1">
