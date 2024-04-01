@@ -100,7 +100,7 @@ const CheckoutCountLayout: FC<Props> = ({ glassType })=> {
         </div>
 
         <div className="h-1 w-full bg-gray-200 mb-6"></div>
-        <div className="text-3xl text-[#222529] font-bold mb-4 flex flex-row space-x-16">
+        <div className="md:text-3xl text-xl md:p-0 p-2 text-[#222529] font-bold mb-4 flex flex-row space-x-16">
     <div>      {priceInCurrency}</div>
           <FormControl className=" w-1/2" >
           <InputLabel id="currency-select-label" className="bg-white p-2">
@@ -117,7 +117,7 @@ const CheckoutCountLayout: FC<Props> = ({ glassType })=> {
         </FormControl>
         </div>
         <div>
-          <div className="font-thin text-md flex flex-row mb-8">
+          <div className="font-thin text-md md:p-0 p-2 flex flex-row mb-8">
             {`AVAILABILITY : `}{" "}
             <div className="font-bold ml-2">{` IN STOCK`}</div>
           </div>
