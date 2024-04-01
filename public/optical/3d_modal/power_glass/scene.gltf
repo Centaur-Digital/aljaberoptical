@@ -16,12 +16,6 @@
         {
             "mesh" : 0,
             "name" : "ASSET",
-            "rotation" : [
-                0.10922633856534958,
-                0,
-                0,
-                0.9940168857574463
-            ],
             "scale" : [
                 100,
                 100,
@@ -139,7 +133,7 @@
         {
             "bufferView" : 0,
             "componentType" : 5126,
-            "count" : 23103,
+            "count" : 23117,
             "max" : [
                 0.07014968246221542,
                 0.051786135882139206,
@@ -155,13 +149,13 @@
         {
             "bufferView" : 1,
             "componentType" : 5126,
-            "count" : 23103,
+            "count" : 23117,
             "type" : "VEC2"
         },
         {
             "bufferView" : 2,
             "componentType" : 5126,
-            "count" : 23103,
+            "count" : 23117,
             "type" : "VEC3"
         },
         {
@@ -208,50 +202,50 @@
     "bufferViews" : [
         {
             "buffer" : 0,
-            "byteLength" : 277236,
+            "byteLength" : 277404,
             "byteOffset" : 0,
             "target" : 34962
         },
         {
             "buffer" : 0,
-            "byteLength" : 184824,
-            "byteOffset" : 277236,
+            "byteLength" : 184936,
+            "byteOffset" : 277404,
             "target" : 34962
         },
         {
             "buffer" : 0,
-            "byteLength" : 277236,
-            "byteOffset" : 462060,
+            "byteLength" : 277404,
+            "byteOffset" : 462340,
             "target" : 34962
         },
         {
             "buffer" : 0,
             "byteLength" : 176376,
-            "byteOffset" : 739296,
+            "byteOffset" : 739744,
             "target" : 34963
         },
         {
             "buffer" : 0,
             "byteLength" : 50400,
-            "byteOffset" : 915672,
+            "byteOffset" : 916120,
             "target" : 34962
         },
         {
             "buffer" : 0,
             "byteLength" : 33600,
-            "byteOffset" : 966072,
+            "byteOffset" : 966520,
             "target" : 34962
         },
         {
             "buffer" : 0,
             "byteLength" : 50400,
-            "byteOffset" : 999672,
+            "byteOffset" : 1000120,
             "target" : 34962
         },
         {
             "buffer" : 0,
             "byteLength" : 44160,
-            "byteOffset" : 1050072,
+            "byteOffset" : 1050520,
             "target" : 34963
         }
     ],
@@ -263,7 +257,7 @@
     ],
     "buffers" : [
         {
-            "byteLength" : 1094232,
+            "byteLength" : 1094680,
             "uri" : "scene.bin"
         }
     ]

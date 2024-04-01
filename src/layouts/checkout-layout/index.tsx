@@ -172,14 +172,14 @@ isImageSliderModalOpen ?
   </div>
   {/* Breadcrumbs */}
   <div className="h-12 w-full text-gray-400 flex flex-row space-x-4 p-2">
-    <FeatherIcon.Home />
+    <FeatherIcon.Home className="cursor-pointer"  onClick={()=>{ router.push('/') }}/>
     <FeatherIcon.ChevronRight />
     <div>{GLASS_NAME}</div>
   </div>
   {/* Product image gallery and checkout count */}
   <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-12 w-full h-full">
     <div className="w-full md:w-1/2  md:h-3/5 h-full  relative">
-      <div className="w-full md:h-full h-[20rem] border border-gray-200 relative cursor-pointer">
+      <div className="w-full md:h-full h-[25rem] border border-gray-200 relative cursor-pointer">
         <div
           className="absolute inset-y-0 left-0 flex items-center z-10 cursor-pointer opacity-0 transition-opacity duration-300 hover:opacity-100"
           onClick={() => handleChangeImage("prev")}
