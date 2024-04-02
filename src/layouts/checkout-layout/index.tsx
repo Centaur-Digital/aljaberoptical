@@ -304,7 +304,7 @@ isImageSliderModalOpen ?
         height="100%" // Set iframe height to 100% to fill the modal vertically
         src={IFRAME_LINK}
         allow="camera;"
-        sandbox="allow-scripts allow-same-origin allow-top-navigation allow-popups"
+  
         style={{ border: "none" }} // Optionally, remove iframe border
       />
     </Box>
@@ -321,8 +321,7 @@ isImageSliderModalOpen ?
         height="100%" // Set iframe height to 100% to fill the modal vertically
         src={IFRAME_LINK}
         allow="camera;xr-spatial-tracking"
-        sandbox="allow-scripts allow-same-origin allow-top-navigation allow-popups"
-        style={{ border: "none" }} // Optionally, remove iframe border
+   style={{ border: "none" }} // Optionally, remove iframe border
       />
     </Box>
   </Modal>
