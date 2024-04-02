@@ -48,8 +48,8 @@ const CheckoutLayout: FC<Props> = ({ glassType }) => {
   const timestamp = new Date().getTime();
   const IFRAME_LINK = `${
     glassType === "EYE_GLASS"
-      ? "https://test.scentinos.com/20240328/index.html?selected=glasses2"
-      : "https://test.scentinos.com/20240328/index.html?selected=glasses1"
+      ? "https://centaurinteractive.com/try-on/index.html?selected=glasses2"
+      : "https://centaurinteractive.com/try-on/index.html?selected=glasses1"
   }&timestamp=${timestamp}`;
   const [is360ViewActive, setIs360ViewActive] = useState<boolean>(false);
   const router = useRouter();
